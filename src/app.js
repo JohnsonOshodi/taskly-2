@@ -10,18 +10,18 @@ const boardRoutes = require("./routes/boardRoutes");
 const organizationroutes = require("./routes/organizationRoutes");
 
 const YAML = require("yamljs");
-const limiter = require("./middleware/rateLimiter");
+const {apiLimiter} = require("./middleware/rateLimiter");
 const swaggerUi = require("swagger-ui-express");
 
 const app = express();
 
 
-app.use(limiter);
+app.use(apiLimiter);
 
 app.use(express.json());
 app.use("/api/auth", authRoutes);
 app.use("/api", protect, organizationroutes);
-app.use("/api", boardRoutes);
+app.use("/api", protect, boardRoutes);
 app.use("/api", protect, taskRoutes);
 
 
