@@ -1,7 +1,7 @@
 openapi: 3.0.3
 info:
   title: Taskly API
-  description: Taskly is a Task Management System 
+  description: Taskly is a robust task management system designed to streamline project management and team collaboration. Featuring real-time updates, automated reminders, and comprehensive reporting, Taskly ensures seamless task tracking and efficient workflow management, empowering teams to stay organized and productive.
   version: "2.0"
 paths:
   /api/auth/register:
